@@ -1,0 +1,43 @@
+********************************************************************************
+DevDoc.txt: Development notes for EXT pt_gsadunning
+Author: Rainer Kuhn
+--------------------------------------------------------------------------------
+
+Legend:
+FIX: fixed a bug
+CHG: changed items/features
+ADD: added feature
+RMV: removed item
+RFT: refactoring / code cleanup
+TODO: todo
+********************************************************************************
+
+
+ToDo: As of 14.11.08
+====================
+
+- TODO: run exhaustive tests (e.g. in KBB envorionment)
+- TODO: check mail dispatch in the complete context of GSA shop (usage of shop data/typoscript shop config, e.g. shopName etc.)
+- TODO (optional): language switch: set language key (two character string or 'default') depending on GSA customer's language -> wz
+- TODO: write documentation/extension manual; including the following notes:
+  - IMPORTANT: PDF directory has to be secured for unauthorized access, e.g. by using .htaccess
+  - IMPORTANT: in existing installations of GSA shop the GSA database field DEBITOR.MAHNTAGE has to be set to a meaningful value 
+               since this is currently not done by any GSA extension (maybe this should go into the pt_gsamindb extension?)
+  - Note: The Default Mail Template is an an example only. You may want to replace the default example template with one without header and footer 
+          to use the general GSA Shop/pt_mail configuration with standardized headers and footers for your installation. 
+  
+
+
+
+********************************************************************************
+CHANGELOG
+********************************************************************************
+
+v0.0.1dev:
+-----------
++ (rk) RFT: cleaned up DevDoc.txt
++ (rk) ADD: added type hints for all object params
++ (rk) ADD: finished integration of ext. pt_mail
+
+
+      

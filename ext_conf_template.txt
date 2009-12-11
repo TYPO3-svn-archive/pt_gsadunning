@@ -1,0 +1,60 @@
+/* 
+$Id: ext_conf_template.txt,v 1.7 2008/11/14 10:05:39 ry37 Exp $ 
+
+possible subcategories: 
+----------------------
+basic	    Extension configuration in Extension Manager
+
+possible data types (type=):
+---------------------------
+int [low-high]		        integer, opt. in range "low" to "high"
+int+  				        positive integer
+offset	[L1,L2,...L6]		comma-separated integers. Default is "x,y", but as comma separated parameters in brackets you can specify up to 6 labels being comma separated! If you wish to omit one of the last 4 fields, just don't enter a label for that element.
+color				        HTML color
+wrap				        HTML-code that is wrapped around some content.
+options [item1,item2,...]	Selectbox with values/labels item1, item2 etc. Commaseparated. Split by "=" also and in that case, first part is label, second is value
+boolean [truevalue]		    Boolean, opt. you can define the value of "true", def.=1
+comment 			        Boolean, checked= "", not-checked = "#".
+file [ext-list/IMAGE_EXT]	Selectorbox with resources. Opt. list allowed extensions (no space in list!), eg. "[ttf]" or "[txt,html,htm]". You can also enter "[IMAGE_EXT]" in which case the default image-extensions are listed. (used for datatype "imgResouce")
+string (the default)	    Just a string value
+*/
+
+
+
+# cat=basic; type=string; label=Locallang file: The file with locallang labels for the documents to be generated 
+languageFile = EXT:pt_gsadunning/cronmod/locallang.xml
+    
+# cat=basic; type=string; label=Reminder PDF template file path: The template file path for the reminder pdf doument (XML template for the Smarty templating engine)
+reminderPdfTemplate = EXT:pt_gsadunning/res/smarty_tpl/reminder_pdf.tpl.xml
+
+# cat=basic; type=string; label=Reminder PDF storage path: The path to store the generated reminder PDF Documents
+reminderPdfStoragePath = fileadmin/reminders/###GSAUIDMOD100###/###GSAUID###/reminder_###YEAR###_###MONTH###_###DAY###.pdf
+
+# cat=basic; type=string; label=Dunning email body template: Relative path, originating from the CLI script directory "typo3conf/ext/pt_gsadunning/cronmod/", to the file containing the body text template for the dunning emails sent from the CLI script (e.g. for a file in fileadmin: "../../../../fileadmin/myTemplate.txt"). You may want to replace the default example template with one without header and footer to use the general GSA Shop/pt_mail configuration with standardized headers and footers for your installation. 
+dunningEmailBodyTemplate = ../res/smarty_tpl/reminder_mailbody.tpl.txt
+
+# cat=basic; type=string; label=Dunning email template charset: The character set (e.g. 'utf-8', 'iso-8859-15', 'iso-8859-1') used for the dunning email template.
+dunningEmailTemplateCharset = utf-8
+
+# cat=basic; type=string; label=Optional dunning email "from": Optional sender email address for dunning emails sent from the CLI script to the appropiate customers. If not set, the default 'from' settings for pt_mail extension are used (basic setting should have been set in pt_mail or pt_gsashop).
+dunningEmailSender =
+
+# cat=basic; type=string; label=Optional dunning email "reply-to": Optional reply-to email address for dunning emails sent from the CLI script to the appropiate customers. If not set, the default 'reply-to' settings for pt_mail extension are used (basic setting should have been set by pt_gsashop).
+dunningEmailReplyTo =
+
+# cat=basic; type=boolean; label=CLI enable logging: Flag whether the CLI script logging should be used. If enabled, cliLogDir has to be set!
+cliEnableLogging = 0
+
+# cat=basic; type=string; label=CLI log output dir (absolute path): _Absolute_ path to the directory for generated logs of the CLI script (Important: don't forget the prefacing and closing slashes "/"). Requires cliEnableLogging to be set.
+cliLogDir = 
+
+# cat=basic; type=string; label=CLI admin email address: Email address for system messages sent from the CLI script.
+cliAdminEmailRecipient = 
+
+# cat=basic; type=boolean; label=CLI quiet mode: Flag for executing the CLI script in quiet mode (uncheck for verbose mode: displays debugging messages while executing the CLI script).
+cliQuietMode = 1
+
+# cat=basic; type=string; label=CLI host name: Name of the host where the CLI script is used. This name is used for identification of the originating host in emails sent from the CLI script.
+cliHostName = 
+
+

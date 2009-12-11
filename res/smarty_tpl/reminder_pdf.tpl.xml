@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document orientation="P" unit="mm" format="A4"><!--{strip}-->
+    
+    <!-- Main configuration -->
+    <!--{assign var="borderLeft" value="20"}-->
+    <!--{assign var="borderRight" value="25"}-->
+    <!--{assign var="paperWidth" value="210"}-->
+    <!--{assign var="paperHeight" value="297"}--><!--{/strip}-->
+    
+    
+    <templates>
+        
+        <!-- Page templates -->
+        <templates>
+            <template name="template1" filename="<!--{$backgroundPdf}-->" page="1" />
+            <template name="template2" filename="<!--{$backgroundPdf}-->" page="1" />
+            <template name="template3" filename="<!--{$backgroundPdf}-->" page="1" />
+        </templates>
+        
+        <pagebackgrounds>
+            <firstpage template="template1" />
+            <evenpages template="template2" />
+            <oddpages template="template3" />
+        </pagebackgrounds>
+        
+    </templates>
+    
+    
+    <meta>
+        <author><!--{$shopOperatorContact.name}--></author>
+        <creator><!--{$creator}--></creator>
+        <keywords><!--{$keywords}--></keywords>
+        <subject><!--{$subject}--></subject>
+        <title><!---{"title"|ll}--></title>
+    </meta>
+    
+    
+    <header>
+    
+        <firstpage>
+            <addmarks />
+        </firstpage>
+        
+        <oddpages>
+            <addmarks />
+        </oddpages>
+        
+    </header>
+    
+    
+    <footer>
+    
+        <allpages>
+        
+            <setxy x="<!--{$paperWidth-$borderRight-80}-->" y="275" />
+            <cell x="<!--{$borderLeft}-->" w="165" align="C"><!--{"page"|ll:"###CURRENTPAGENO###"}--></cell>
+        
+        </allpages>
+    
+    </footer>
+    
+    
+    <content>
+        
+        <addpage />
+        <!-- Falz und Lochmarken -->
+        <setmargins left="<!--{$borderLeft}-->" top="30" right="<!--{$borderRight}-->"/>
+        <setheight h="5"/>
+        
+        <!-- Sender address -->
+        <setfont family="Arial" style="" size="8" />
+        <cell x="<!--{$borderLeft}-->" y="50" w="85" align="C"><!--{$shopOperatorContact.name}--> | <!--{$shopOperatorContact.streetNo}--> | <!--{$shopOperatorContact.zip}--> <!--{$shopOperatorContact.city}--></cell>
+        <line x1="<!--{$borderLeft}-->" y1="55" length="85" orientation="h" />
+        
+        <!-- Recipient address -->
+        <setfont family="Arial" style="B" size="10" />
+         <multicell x="<!--{$borderLeft}-->" y="62" w="85" h="5"><!--{$customerAddress}--></multicell>
+        
+        <!-- Header -->
+        <setfont family="Arial" style="B" size="16" />
+        <text x="<!--{$borderLeft}-->" y="100"><!--{$subject}--></text>
+        
+        <!-- Date and Intro text -->
+        <setfont family="Arial" style="" size="10" />
+        <setxy x="<!--{$borderLeft}-->" y="110" />
+        <write><!--{"date"|ll}-->: <!--{$date|date_format:"%d.%m.%y"}--></write><ln />
+        <ln />
+        <ln />
+        <write><!--{"introSalutation"|ll}--></write><ln />
+        <ln />
+        <write><!--{$introText}--></write>
+        <ln />
+        <ln />
+        <write><!--{"oustandingItems"|ll}--></write>
+        <ln />
+        <ln />
+        
+        <!-- Oustanding items data -->
+        <!--{foreach name="outstandingItems" from=$outstandingItems item=outstandingItem}-->
+            <setfont family="Arial" style="B" size="10" />
+            <write><!--{$outstandingItem.relatedDocNo}--></write>
+            <setfont family="Arial" style="" size="10" />
+            <setxy x="+1" y="+0" />
+            <write>(<!--{$outstandingItem.date}-->):</write>
+            <ln />
+            <setfont family="Arial" style="" size="10" />
+            <setxy x="+5" y="+0" />
+            <write><!--{"itemTotal"|ll}-->: <!--{$outstandingItem.amountGross}-->,</write>
+            <setfont family="Arial" style="B" size="10" />
+            <setxy x="+1" y="+0" />
+            <write><!--{"itemOutstanding"|ll}-->: <!--{$outstandingItem.oustandingAmount}-->,</write>
+            <setfont family="Arial" style="" size="10" />
+            <setxy x="+1" y="+0" />
+            <write><!--{if $outstandingItem.isDue}--><!--{"itemDueSince"|ll}--><!--{else}--><!--{"itemDueAt"|ll}--><!--{/if}-->: <!--{$outstandingItem.dueDate}--></write>
+            <ln />
+            <!--{if $outstandingItem.isDue}-->
+                <setxy x="+5" y="+0" />
+                <write>  <!--{"itemDunningLevel"|ll}-->: <!--{$outstandingItem.dunningLevel}--></write>
+              <!--{if $outstandingItem.dunningCharge > 0 }-->
+                <setfont family="Arial" style="B" size="10" />
+                <setxy x="+1" y="+0" />
+                <write>, <!--{"itemDunningCharge"|ll}-->: <!--{$outstandingItem.dunningCharge}--></write>
+              <!--{/if}-->
+                <ln />
+                <setfont family="Arial" style="B" size="10" />
+                <setxy x="+5" y="+0" />
+                <write><!--{"itemDunningDueDate"|ll}-->: <!--{$outstandingItem.dunningDueDate}--></write>
+                <ln />
+            <!--{/if}-->
+        <!--{/foreach}-->
+        
+        <!-- Outtro text -->
+        <setfont family="Arial" style="" size="10" />
+        <ln />
+        <write><!--{"outtroText"|ll}--></write>
+        <ln />
+        <ln />
+        <write><!--{"outtroCloser"|ll}-->,</write>
+        <ln />
+        <write><!--{$shopOperatorContact.name}--></write>
+        <ln />
+        <ln />
+        <write><!--{"questionsNote"|ll:$shopOperatorContact.email:$contactPhoneNumber}--></write>
+        
+        
+    </content>
+    
+</document>

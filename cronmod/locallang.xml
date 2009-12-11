@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>module</type>
+        <description>Language labels for module &quot;cronmod&quot;</description>
+    </meta>
+    <data type="array">
+    
+        <languageKey index="default" type="array">
+            
+            <!-- pdfdoc and email labels -->
+            
+            <label index="title">Reminder</label>
+            <label index="subject_level1">Reminder</label>
+            <label index="subject_level2">Dunning letter</label>
+            <label index="subject_level3">Pre-collection letter</label>
+            <label index="customerName">Customer</label>
+            <label index="customerId">Customer ID</label>
+            <label index="page">- Seite %s -</label>
+            <label index="date">Date</label>
+            <label index="introSalutation">Dear customer, </label>
+            <label index="introText_level1">certainly forgotten...</label>
+            <label index="introText_level2">you did not react on our first reminder letter. Should there be reasonable circumstances preventing you from making the payment, please inform us to avoid another dunning letter. Otherwise we ask you to settle your balance until the date mentioned for the respective oustanding item at the latest.</label>
+            <label index="introText_level3">Although two previous reminder letters have been sent to you, no remittance has yet been received. Unless the balance is settled until the date mentioned for the respective oustanding item at the latest, we shall have no alternative but to place the matter in the hands of our solicitor.</label>
+            <label index="oustandingItems">These are the outstanding posts to settle for your customer account:</label>
+            <label index="oustandingItemsEmail">Details on your outstanding posts you'll find in the PDF document attached to this email.</label>
+            
+            <label index="itemTotal">total</label>
+            <label index="itemOutstanding">outstanding</label>
+            <label index="itemDueAt">due at</label>
+            <label index="itemDueSince">DUE SINCE</label>
+            <label index="itemDunningLevel">dunning level</label>
+            <label index="itemDunningCharge">dunning charge</label>
+            <label index="itemDunningDueDate">We expect your payment not later than</label>
+            
+            <label index="outtroText">Please settle the above mentioned outstanding items including possibly arising dunning charges until their respective due date.</label>
+            <label index="outtroCloser">Yours faithfully</label>
+            <label index="questionsNote">If you have questions regarding this invoice, feel free to write us an e-mail to %s or give us a call at %s</label>
+            
+        </languageKey>
+        
+        <languageKey index="de" type="array">
+            
+            <!-- pdfdoc and email labels -->
+            
+            <label index="title">Mahnung</label>
+            <label index="subject_level1">Zahlungserinnerung</label>
+            <label index="subject_level2">Mahnung</label>
+            <label index="subject_level3">Letzte Mahnung</label>
+            <label index="title">Mahnung</label>
+            <label index="customerName">Kunde</label>
+            <label index="customerId">Kunden-ID</label>
+            <label index="page">- Seite %s -</label>
+            <label index="date">Datum</label>
+            <label index="introSalutation">Sehr geehrter Kunde,</label>
+            <label index="introText_level1">sicher haben Sie es nur vergessen...</label>
+            <label index="introText_level2">leider haben Sie auf unsere erste Zahlungserinnerung nicht reagiert. Sollte es berechtigte Gründe geben, die eine Zahlung Ihrerseits verhindern, bitten wir Sie, uns diese mitzuteilen, um einer erneuten Mahnung entgegenzuwirken. Liegen solche Gründe nicht vor, möchten wir Sie dringend bitten, die fälligen Beträge innerhalb der für den jeweiligen Posten gegebenen Frist auszugleichen.</label>
+            <label index="introText_level3">da auch unsere zweite Mahnung erfolglos blieb, geben wir Ihnen nochmal einmal die Gelegenheit, die fälligen Beträge innerhalb der für den jeweiligen Posten gegebenen Frist auszugleichen. Bei Nichteinhaltung des Termines werden wir ohne weitere Vorankündigung die Angelegenheit unserem Anwaltsbüro übergeben.</label>
+            <label index="oustandingItems">Folgende offenen Posten sind noch für Ihr Kundenkonto zu begleichen:</label>
+            <label index="oustandingItemsEmail">Details zu den einzelnen offenen Posten finden Sie in dem dieser Mail angehängten PDF-Dokument.</label>
+            
+            <label index="itemTotal">Summe</label>
+            <label index="itemOutstanding">davon noch offen</label>
+            <label index="itemDueAt">fällig am</label>
+            <label index="itemDueSince">FÄLLIG SEIT</label>
+            <label index="itemDunningLevel">Mahnstufe</label>
+            <label index="itemDunningCharge">Mahngebühr</label>
+            <label index="itemDunningDueDate">Wir erwarten Ihre Zahlung bis spätestens</label>
+            
+            <label index="outtroText">Bitte begleichen Sie die oben genannten offenen Posten inklusive eventuell anfallender Mahngebühren bis zu deren jeweiligem Fälligkeitsdatum.</label>
+            <label index="outtroCloser">Mit freundlichen Grüßen</label>
+            <label index="questionsNote">Fragen oder Anmerkungen? Schreiben Sie uns eine E-Mail an %s oder rufen Sie uns an unter %s.</label>
+            
+        </languageKey>
+        
+    </data>
+</T3locallang>
+

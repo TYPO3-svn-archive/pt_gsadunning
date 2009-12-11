@@ -1,0 +1,8 @@
+// all settings assigned like {$config.tx_ptgsadunning.*} originate from /static/constants.txt
+// $Id: setup.txt,v 1.2 2008/09/22 10:15:27 ry37 Exp $ 
+
+config.tx_ptgsadunning {
+    
+    
+    
+}

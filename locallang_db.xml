@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'pt_gsadunning'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_ptgsadunning_dunning">Dunning data</label>
+			<label index="tx_ptgsadunning_dunning.related_doc_no">Related document no.</label>
+			<label index="tx_ptgsadunning_dunning.dunning_level">Dunning level</label>
+			<label index="tx_ptgsadunning_dunning.dunning_charge">Dunning charge</label>
+			<label index="tx_ptgsadunning_dunning.last_dunning_date">Date of last dunning</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_ptgsadunning_dunning">Mahnungs-Daten</label>
+			<label index="tx_ptgsadunning_dunning.related_doc_no">Vorgangsnummer</label>
+			<label index="tx_ptgsadunning_dunning.dunning_level">Mahnstufe</label>
+			<label index="tx_ptgsadunning_dunning.dunning_charge">Mahngebuehr</label>
+			<label index="tx_ptgsadunning_dunning.last_dunning_date">Datum der letzten Mahnung</label>
+		</languageKey>
+	</data>
+</T3locallang>

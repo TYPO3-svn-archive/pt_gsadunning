@@ -1,0 +1,19 @@
+﻿{* Smarty *}{strip}
+{* Default UTF-8 encoded example template for pt_gsadunning "Dunning mail"; Author: Rainer Kuhn <kuhn@punkt.de>, since 2008-09-23 *}
+{* You may want to replace this default example template with one without header and footer to use the general GSA Shop/pt_mail configuration with standardized headers and footers for your installation. *} 
+{* $Id: reminder_mailbody.tpl.txt,v 1.5 2008/11/14 10:05:20 ry37 Exp $ *}
+{***** IMPORTANT: Since this is a plain text template every blank and linebreak used for template placeholders will be displayed! *****}{/strip}
+{'customerName'|ll}: {$customerName}
+
+
+{'introSalutation'|ll}
+
+{$introText}
+
+{'oustandingItemsEmail'|ll}
+
+{'outtroCloser'|ll},
+{$shopName}
+
+
+{'questionsNote'|ll:$contactEmail:$contactPhoneNumber}
